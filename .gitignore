@@ -1,0 +1,12 @@
+**/tools/*.o
+**/tools/*.idx
+**/tools/columns.h
+**/tools/streams.h
+**/tools/tables.h
+**/tools/.ctags_updated
+**/tools/tpcds.idx.h
+**/tools/checksum
+**/tools/distcomp
+**/tools/dsdgen
+**/tools/dsqgen
+**/tools/mkheader

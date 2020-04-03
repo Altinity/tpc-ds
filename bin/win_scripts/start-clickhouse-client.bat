@@ -1,0 +1,1 @@
+docker exec -it clickhouse-server clickhouse-client -mn --stacktrace --log_queries 1
