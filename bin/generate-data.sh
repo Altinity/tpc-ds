@@ -15,8 +15,18 @@ fi
 
 SCALE=$1
 SUFFIX="_$(printf "%04d" $SCALE).dat"
+PARALLEL_STREAMS_COUNT=10
 
 mkdir $OUTPUT_DIR
-./dsdgen -scale $SCALE -dir $OUTPUT_DIR -suffix $SUFFIX
+
+for ((i = 1; i <= $PARALLEL_STREAMS_COUNT; i++)); do
+	./dsdgen -scale $SCALE -dir $OUTPUT_DIR -suffix $SUFFIX -parallel $PARALLEL_STREAMS_COUNT -child $i &
+    pids[${i}]=$!
+done
+
+# wait for generating be completed
+for pid in ${pids[*]}; do
+    wait $pid
+done
 
 cd -
