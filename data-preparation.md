@@ -21,4 +21,4 @@ clickhouse-client -mn < schema/tpcds.sql
 
 2. check the correctness of CH database
 
-Compare the count of rows with [TPC DS Specification (see '3.2 TEST DATABASE SCALING')](https://gitlab.com/altinity-qa/clickhouse/cicd/tpc-ds/-/blob/master/tpc-ds-tool/specification/specification.pdf) per table.
+Compare the count of rows with [TPC DS Specification (see '3.2 TEST DATABASE SCALING')](https://github.com/Altinity/tpc-ds/blob/master/tpc-ds-tool/v2.11.0rc2/specification/specification.pdf) per table.
