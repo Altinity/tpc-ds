@@ -205,38 +205,7 @@ with customer_total_return as (..)
 
 [github issue 9853](https://github.com/ClickHouse/ClickHouse/issues/9853)
 
-```sql
-# success
-SELECT count(*) /* <-- asterisk defined */
-FROM numbers(4) AS n1, numbers(3) AS n2
-WHERE (n1.number = n2.number);
-
-# success
-SELECT count() /* not asterisk */
-FROM numbers(4) AS n1, numbers(3) AS n2, numbers(6) AS n3
-WHERE (n1.number = n2.number) AND (n2.number = n3.number);
-
-# fail
-SELECT count(*) /* <-- asterisk defined */
-FROM numbers(4) AS n1, numbers(3) AS n2, numbers(6) AS n3
-WHERE (n1.number = n2.number) AND (n2.number = n3.number);
-/* Code: 48. DB::Exception: Received from localhost:9000. DB::Exception: Multiple JOIN do not support asterisks for complex queries yet. */
-```
-
-```sql
-# success
-SELECT n1.number
-FROM numbers(4) AS n1, numbers(3) AS n2
-GROUP BY n1.number
-HAVING count(*) > 1;
-
-# fail
-SELECT n1.number
-FROM numbers(4) AS n1, numbers(3) AS n2, numbers(7) AS n3
-GROUP BY n1.number
-HAVING count(*) > 1;
-/* Code: 48. DB::Exception: Received from localhost:9000. DB::Exception: Multiple JOIN do not support asterisks for complex queries yet. */
-```
+[github issue 10481](https://github.com/ClickHouse/ClickHouse/issues/10481)
 
 | **Affected queries** |||
 | --- | --- | --- |
@@ -384,6 +353,7 @@ FROM system.tables, system.one
 ### Others DB benchmarks
 
 [Vertica White paper - Benchmarks Prove the Value of an Analytical Database for Big Data](https://www.vertica.com/wp-content/uploads/2017/01/Benchmarks-Prove-the-Value-of-an-Analytical-Database-for-Big-Data.pdf)
+
 [Vertica TPC-DS benchmark performance analysis](http://bicortex.com/vertica-mpp-database-overview-and-tpc-ds-benchmark-performance-analysis-part-3/)
 
 [tidb-bench](https://github.com/pingcap/tidb-bench)
