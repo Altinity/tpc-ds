@@ -2,7 +2,7 @@
 
 for file_name in `ls ../data/*.dat`; do
     table_file=$(echo "${file_name##*/}")
-    table_name=$(echo "${table_file%_*_*_*}" | tr '[:upper:]' '[:lower:]')
+    table_name=$(echo "${table_file%_*}" | tr '[:upper:]' '[:lower:]')
     upload_data_sql="INSERT INTO $table_name FORMAT CSV"
 
     echo "$upload_data_sql <-- $(du -h $file_name)"
