@@ -43,6 +43,8 @@ SELECT toDecimal32(10, 2) > CAST(1.2, 'Decimal(7, 2)') * toDecimal32(3, 2);
 
 #### 2.4 Intervals like this '+ 30 days' not supported
 
+[github issue 9887](https://github.com/ClickHouse/ClickHouse/issues/9887#issuecomment-763397937)
+
 To fix: need to use *INTERVAL* data type.
 
 ```sql
