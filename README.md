@@ -7,6 +7,8 @@ ClickHouse TPC-DS (Decision Support Benchmark).
 
 ## Report
 
+75 queries passing (75.76%)
+
 ### 1. Performance issues
 
 #### 1.1 '300s timeout'
