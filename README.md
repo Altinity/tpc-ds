@@ -16,12 +16,6 @@ ClickHouse TPC-DS (Decision Support Benchmark).
 | --- | --- |
 | [query_72.sql](/queries/query_72.sql) | 
 
-#### 1.1 'Query stuck'
-
-| **Affected queries** ||
-| --- | --- |
-| [query_64.sql](/queries/query_64.sql) | 
-
 ### 2. Fixable failed queries
 
 Fixes described below will require modification of related template-files or generated queries.
