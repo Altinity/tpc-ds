@@ -110,7 +110,7 @@ LIMIT 1;
 | [query_6.sql](/queries/query_6.sql) | [query_10.sql](/queries/query_10.sql) | [query_16.sql](/queries/query_16.sql) |
 | [query_30.sql](/queries/query_30.sql) | [query_32.sql](/queries/query_32.sql) | [query_35.sql](/queries/query_35.sql) |
 | [query_41.sql](/queries/query_41.sql) | [query_69.sql](/queries/query_69.sql) | [query_81.sql](/queries/query_81.sql) |
-| [query_92.sql](/queries/query_92.sql) | [query_94.sql](/queries/query_94.sql) | |
+| [query_92.sql](/queries/query_92.sql) | [query_94.sql](/queries/query_94.sql) | [query_1.sql](/queries/query_1.sql) |
 
 
 #### 3.7.8 'CROSS JOIN to INNER JOIN rewrite depends on tables order in query.'
