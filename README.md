@@ -29,14 +29,6 @@ Fixes described below will require modification of related template-files or gen
 
 To fix: need to explicitly cast *Float64* to *Decimal(7, 2)*.
 
-```sql
-# fail
-SELECT toDecimal32(10, 2) > 1.2 * toDecimal32(3, 2);
-/* Code: 43. DB::Exception: Received from localhost:9000. DB::Exception: Illegal types Float64 and Decimal(9, 2) of arguments of function multiply. */
-
-# success
-SELECT toDecimal32(10, 2) > CAST(1.2, 'Decimal(7, 2)') * toDecimal32(3, 2);
-```
 
 | **Affected queries** ||
 | --- | --- |
