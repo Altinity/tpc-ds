@@ -129,13 +129,6 @@ LIMIT 1;
 | [query_57.sql](/queries/query_57.sql) |
 
 
-### 4 Performance issue
-
-| **Affected queries** |
-| --- |
-| [query_72.sql](/queries/query_72.sql) |
-
-
 ## References
 
 ### TPC-DS documents
