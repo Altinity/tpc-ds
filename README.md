@@ -84,7 +84,7 @@ Code: 241. DB::Exception: Received from localhost:9000. DB::Exception: Memory li
 
 #### 3.7.3 'Correlated subqueries (missing columns: "x" while processing query)'
 
-[github issue 9861](https://github.com/ClickHouse/ClickHouse/issues/9861)
+[github issue 6697](https://github.com/ClickHouse/ClickHouse/issues/6697)
 
 ```sql
 # success
