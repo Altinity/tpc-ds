@@ -12,7 +12,7 @@ ClickHouse TPC-DS (Decision Support Benchmark).
 
 ### 1. Performance issues
 
-#### 1.1 '300s timeout'
+#### 1.1 '600s timeout'
 
 
 | **Affected queries** ||
@@ -62,7 +62,7 @@ SELECT (now() + INTERVAL 30 day);
 #### 3.1 Memory limit exceeded (Could be a part of Performance optimization)
 
 ```bash
-Code: 241. DB::Exception: Received from localhost:9000. DB::Exception: Memory limit (for query) exceeded: would use 9.34 GiB (attempt to allocate chunk of 67108864 bytes), maximum: 9.31 GiB.
+Code: 241. DB::Exception: Received from localhost:9000. DB::Exception: Memory limit (for query) exceeded: would use 32.34 GiB (attempt to allocate chunk of 67108864 bytes), maximum: 32 GiB.
 ```
  
 | **Affected queries** | | |
