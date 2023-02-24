@@ -4,11 +4,11 @@ ClickHouse TPC-DS (Decision Support Benchmark).
 ## Benchmark environment
 * Data scale = 100 (100GB of data)
 * Node size 16 CPU, 64GB RAM
-* ClickHouse server version 22.9
+* ClickHouse server version 23.2
 
 ## Report
 
-75 queries passing (75.76%)
+72 queries passing (72.73%)
 
 ### 1. Performance issues
 
@@ -72,6 +72,21 @@ Code: 241. DB::Exception: Received from localhost:9000. DB::Exception: Memory li
 | [query_65.sql](/queries/query_65.sql) | [query_78.sql](/queries/query_78.sql) ||
 
 *Remark:* when run test under Docker, make sure that the memory limit much more [max_memory_usage](https://clickhouse.tech/docs/en/operations/settings/query_complexity/#settings_max_memory_usage) (see Docker -> Settings -> Advance).
+
+#### 3.5 CASE operator in ORDER BY
+
+[github issue 46335](https://github.com/ClickHouse/ClickHouse/issues/46335)
+
+```sql
+SELECT key_a + key_b as d, rank() OVER () as f FROM (SELECT rand() % 10 as key_a, rand(1) % 5 as key_b, number  FROM numbers(100)) GROUP BY rollup(key_a,key_b) ORDER BY  case when d = 0 then key_a end;
+
+Code: 47. DB::Exception: Unknown column: if(equals(plus(key_a, key_b), 0), key_a, NULL), there are only columns __grouping_set, key_a, key_b, plus(key_a, key_b). (UNKNOWN_IDENTIFIER)
+```
+
+
+| **Affected queries** |||
+| --- | --- | --- |
+| [query_36.sql](/queries/query_36.sql) | [query_70.sql](/queries/query_70.sql) | [query_86.sql](/queries/query_86.sql) |
 
 
 #### 3.7.3 'Correlated subqueries (missing columns: "x" while processing query)'
