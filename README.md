@@ -8,16 +8,12 @@ ClickHouse TPC-DS (Decision Support Benchmark).
 
 ## Report
 
-72 queries passing (72.73%)
+74 queries passing (74.75%)
 
 ### 1. Performance issues
 
 #### 1.1 '600s timeout'
 
-
-| **Affected queries** ||
-| --- | --- |
-| [query_72.sql](/queries/query_72.sql) | 
 
 ### 2. Fixable failed queries
 
@@ -67,26 +63,11 @@ Code: 241. DB::Exception: Received from localhost:9000. DB::Exception: Memory li
  
 | **Affected queries** | | |
 | --- | --- | --- |
-| [query_4.sql](/queries/query_4.sql) | [query_13.sql](/queries/query_13.sql) | [query_14.sql](/queries/query_14.sql) |
-| [query_18.sql](/queries/query_18.sql) | [query_48.sql](/queries/query_48.sql) ||
-| [query_65.sql](/queries/query_65.sql) | [query_78.sql](/queries/query_78.sql) ||
+| [query_4.sql](/queries/query_4.sql) | [query_11.sql](/queries/query_11.sql) | [query_14.sql](/queries/query_14.sql) |
+| [query_18.sql](/queries/query_18.sql) ||
+| [query_65.sql](/queries/query_65.sql) | [query_74.sql](/queries/query_74.sql) | [query_78.sql](/queries/query_78.sql) ||
 
 *Remark:* when run test under Docker, make sure that the memory limit much more [max_memory_usage](https://clickhouse.tech/docs/en/operations/settings/query_complexity/#settings_max_memory_usage) (see Docker -> Settings -> Advance).
-
-#### 3.5 CASE operator in ORDER BY
-
-[github issue 46335](https://github.com/ClickHouse/ClickHouse/issues/46335)
-
-```sql
-SELECT key_a + key_b as d, rank() OVER () as f FROM (SELECT rand() % 10 as key_a, rand(1) % 5 as key_b, number  FROM numbers(100)) GROUP BY rollup(key_a,key_b) ORDER BY  case when d = 0 then key_a end;
-
-Code: 47. DB::Exception: Unknown column: if(equals(plus(key_a, key_b), 0), key_a, NULL), there are only columns __grouping_set, key_a, key_b, plus(key_a, key_b). (UNKNOWN_IDENTIFIER)
-```
-
-
-| **Affected queries** |||
-| --- | --- | --- |
-| [query_36.sql](/queries/query_36.sql) | [query_70.sql](/queries/query_70.sql) | [query_86.sql](/queries/query_86.sql) |
 
 
 #### 3.7.3 'Correlated subqueries (missing columns: "x" while processing query)'
@@ -140,6 +121,25 @@ LIMIT 1;
 | [query_47.sql](/queries/query_47.sql) |
 | [query_57.sql](/queries/query_57.sql) |
 
+
+#### 3.7.10 'Resolve identifier supported for constants and CTE. Actual node type COLUMN'
+
+[github issue 58994](https://github.com/ClickHouse/ClickHouse/issues/58994)
+
+| **Affected queries** |
+| --- |
+| [query_95.sql](/queries/query_95.sql) |
+
+
+
+#### 3.7.11 'If(Int64 IS NULL, ...) wrong data type assumed'
+
+[github issue 58997](https://github.com/ClickHouse/ClickHouse/issues/58997)
+
+
+| **Affected queries** ||
+| --- | --- |
+| [query_72.sql](/queries/query_72.sql) | 
 
 ## References
 
