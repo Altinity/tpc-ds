@@ -141,6 +141,15 @@ LIMIT 1;
 | --- | --- |
 | [query_72.sql](/queries/query_72.sql) | 
 
+#### 3.7.12 'wrong pushdown of id.null to table engine non nullable column (null type is generated in JOIN),'
+
+[github issue 58998](https://github.com/ClickHouse/ClickHouse/issues/58998)
+
+
+| **Affected queries** ||
+| --- | --- |
+| [query_78.sql](/queries/query_78.sql) | 
+
 ## References
 
 ### TPC-DS documents
