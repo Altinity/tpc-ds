@@ -4,7 +4,7 @@ ClickHouse TPC-DS (Decision Support Benchmark).
 ## Benchmark environment
 * Data scale = 100 (100GB of data)
 * Node size 16 CPU, 64GB RAM
-* ClickHouse server version 23.2
+* ClickHouse server version 24.1
 
 ## Report
 
