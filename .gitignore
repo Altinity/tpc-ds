@@ -10,3 +10,5 @@
 **/tools/dsdgen
 **/tools/dsqgen
 **/tools/mkheader
+results/*.out
+results/*.err

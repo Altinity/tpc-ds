@@ -1,14 +1,24 @@
 #!/bin/bash
+# Load the dsdgen output into ClickHouse.
+#   ./upload-data.sh [data_dir]            (default: ../data)
+# Env: CLICKHOUSE_CLIENT  client command (default: clickhouse-client)
+#      PARALLEL           files loaded concurrently (default: 8)
+# dsdgen -parallel N names files <table>_<child>_<N>_<scale>.dat; the table
+# name is everything before those three numeric suffixes.
 
-for file_name in `ls ../data/*.dat`; do
-    table_file=$(echo "${file_name##*/}")
-    table_name=$(echo "${table_file%_*}" | tr '[:upper:]' '[:lower:]')
-    upload_data_sql="INSERT INTO $table_name FORMAT CSV"
+DATA_DIR="${1:-../data}"
+CLIENT="${CLICKHOUSE_CLIENT:-clickhouse-client}"
+PARALLEL="${PARALLEL:-8}"
 
-    echo "$upload_data_sql <-- $(du -h $file_name)"
+load_file() {
+    file_name="$1"
+    table_name=$(basename "$file_name" | sed -E "s/(_[0-9]+){3}\.dat$//" | tr "[:upper:]" "[:lower:]")
+    echo "INSERT INTO $table_name <-- $(du -h "$file_name" | cut -f1) $(basename "$file_name")"
+    $CLIENT --format_csv_delimiter="|" --max_partitions_per_insert_block=100 \
+        --database="tpcds" --query="INSERT INTO $table_name FORMAT CSV" < "$file_name" \
+        || echo "FAILED: $file_name" >&2
+}
+export -f load_file
+export CLIENT
 
-    cat $file_name | clickhouse-client --format_csv_delimiter="|" --max_partitions_per_insert_block=100 --database="tpcds" --query="$upload_data_sql"
-    rm $file_name
-
-    sleep 5
-done
+ls "$DATA_DIR"/*.dat | xargs -P "$PARALLEL" -I{} bash -c "load_file {}"

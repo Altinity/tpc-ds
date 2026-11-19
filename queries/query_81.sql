@@ -1,4 +1,4 @@
-USE tpcds; SET partial_merge_join = 1, partial_merge_join_optimizations = 1, max_bytes_before_external_group_by = 5000000000, max_bytes_before_external_sort = 5000000000;
+USE tpcds; SET max_bytes_before_external_group_by = 5000000000, max_bytes_before_external_sort = 5000000000;
 with customer_total_return as
  (select cr_returning_customer_sk as ctr_customer_sk
         ,ca_state as ctr_state, 
