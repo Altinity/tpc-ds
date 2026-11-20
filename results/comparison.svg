@@ -1,0 +1,465 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1055" width="900" height="1055" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<title id="t">ClickHouse 24.1.8.22 vs 26.10.7.24 on TPC-DS SF100, lower is better</title>
+<desc id="d">54 of 61 queries are faster on 26.10; Q2: 4.84 s to 1.56 s, Q3: 13.82 s to 0.31 s, Q4: 197.08 s to 15.19 s, Q7: 2.15 s to 2.13 s, Q8: 3.82 s to 0.95 s, Q9: 2.49 s to 5.33 s, Q11: 123.44 s to 8.61 s, Q13: 600.00 s (timeout) to 2.66 s, Q15: 4.45 s to 0.46 s, Q17: 45.17 s to 2.15 s, Q19: 9.16 s to 0.60 s, Q22: 2.00 s to 0.94 s, Q23: 116.80 s to 221.81 s, Q24: 30.25 s to 3.37 s, Q25: 44.13 s to 1.79 s, Q26: 1.41 s to 0.95 s, Q27: 2.15 s to 1.71 s, Q28: 2.58 s to 3.99 s, Q29: 43.87 s to 2.21 s, Q31: 5.54 s to 3.03 s, Q33: 1.64 s to 1.17 s, Q34: 2.06 s to 1.54 s, Q38: 12.23 s to 19.92 s, Q39: 10.29 s to 0.64 s, Q42: 7.25 s to 0.34 s, Q43: 28.65 s to 0.97 s, Q44: 0.90 s to 1.19 s, Q45: 2.77 s to 0.36 s, Q46: 3.43 s to 2.18 s, Q48: 600.00 s (timeout) to 1.97 s, Q50: 10.05 s to 1.51 s, Q51: 12.75 s to 4.55 s, Q52: 7.16 s to 0.34 s, Q53: 5.64 s to 0.49 s, Q54: 29.13 s to 1.04 s, Q55: 7.12 s to 0.26 s, Q56: 1.66 s to 0.76 s, Q59: 8.70 s to 2.88 s, Q60: 1.79 s to 1.16 s, Q62: 1.80 s to 0.57 s, Q63: 5.47 s to 0.50 s, Q64: 600.00 s (timeout) to 0.70 s, Q65: 600.00 s (timeout) to 2.59 s, Q67: 89.45 s to 98.35 s, Q68: 2.97 s to 2.26 s, Q71: 1.66 s to 0.74 s, Q73: 1.68 s to 1.50 s, Q74: 103.34 s to 4.89 s, Q76: 1.12 s to 0.84 s, Q83: 0.77 s to 0.26 s, Q84: 2.95 s to 0.20 s, Q85: 2.79 s to 0.65 s, Q87: 12.23 s to 19.90 s, Q88: 13.36 s to 6.62 s, Q89: 6.66 s to 0.87 s, Q90: 0.70 s to 0.52 s, Q91: 2.71 s to 0.20 s, Q93: 7.01 s to 1.37 s, Q96: 1.16 s to 0.90 s, Q97: 13.14 s to 2.79 s, Q99: 3.05 s to 0.82 s.</desc>
+<rect width="900" height="1055" fill="#fcfcfb"/>
+<text x="24" y="34" font-size="17" font-weight="700" fill="#0b0b0b">ClickHouse 24.1.8.22 vs 26.10.7.24 on TPC-DS SF100, lower is better</text>
+<text x="24" y="55" font-size="12" fill="#52514e">c6id.8xlarge, best of 2 runs, log axis; queries that ran on both versions or timed out on 24.1 (61 of 99)</text>
+<path d="M30,72 l6,6 l-6,6 l-6,-6 z" fill="#2a78d6"/>
+<text x="42" y="82" font-size="12" fill="#52514e">24.1.8.22</text>
+<circle cx="144" cy="78" r="5.5" fill="#1baf7a"/>
+<text x="155" y="82" font-size="12" fill="#52514e">26.10.7.24</text>
+<path d="M270,72 l6,6 l-6,6 l-6,-6 z" fill="#fcfcfb" stroke="#2a78d6" stroke-width="2"/>
+<text x="282" y="82" font-size="12" fill="#52514e">24.1 timeout (limit 600 s)</text>
+<line x1="68.0" y1="100" x2="68.0" y2="1015" stroke="#e1e0d9" stroke-width="1"/>
+<text x="68.0" y="1033" font-size="11" text-anchor="middle" fill="#898781">0.1 s</text>
+<line x1="124.3" y1="100" x2="124.3" y2="1015" stroke="#e1e0d9" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="198.7" y1="100" x2="198.7" y2="1015" stroke="#e1e0d9" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="255.0" y1="100" x2="255.0" y2="1015" stroke="#e1e0d9" stroke-width="1"/>
+<text x="255.0" y="1033" font-size="11" text-anchor="middle" fill="#898781">1 s</text>
+<line x1="311.3" y1="100" x2="311.3" y2="1015" stroke="#e1e0d9" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="385.7" y1="100" x2="385.7" y2="1015" stroke="#e1e0d9" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="442.0" y1="100" x2="442.0" y2="1015" stroke="#e1e0d9" stroke-width="1"/>
+<text x="442.0" y="1033" font-size="11" text-anchor="middle" fill="#898781">10 s</text>
+<line x1="498.3" y1="100" x2="498.3" y2="1015" stroke="#e1e0d9" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="572.7" y1="100" x2="572.7" y2="1015" stroke="#e1e0d9" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="629.0" y1="100" x2="629.0" y2="1015" stroke="#e1e0d9" stroke-width="1"/>
+<text x="629.0" y="1033" font-size="11" text-anchor="middle" fill="#898781">100 s</text>
+<line x1="685.3" y1="100" x2="685.3" y2="1015" stroke="#e1e0d9" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="759.7" y1="100" x2="759.7" y2="1015" stroke="#e1e0d9" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="816.0" y1="100" x2="816.0" y2="1015" stroke="#e1e0d9" stroke-width="1"/>
+<text x="816.0" y="1033" font-size="11" text-anchor="middle" fill="#898781">1000 s</text>
+<line x1="68" y1="100" x2="68" y2="1015" stroke="#c3c2b7" stroke-width="1"/>
+<g><title>Q2: 24.1 4.84 s, 26.10 1.56 s, 3.1x faster</title>
+<rect x="68" y="100.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="111.5" font-size="11" text-anchor="end" fill="#52514e">Q2</text>
+<line x1="383.1" y1="107.5" x2="291.1" y2="107.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M383.1,102.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="291.1" cy="107.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q3: 24.1 13.82 s, 26.10 0.31 s, 44.1x faster</title>
+<rect x="68" y="115.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="126.5" font-size="11" text-anchor="end" fill="#52514e">Q3</text>
+<line x1="468.3" y1="122.5" x2="160.8" y2="122.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M468.3,117.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="160.8" cy="122.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q4: 24.1 197.08 s, 26.10 15.19 s, 13.0x faster</title>
+<rect x="68" y="130.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="141.5" font-size="11" text-anchor="end" fill="#52514e">Q4</text>
+<line x1="684.1" y1="137.5" x2="475.9" y2="137.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M684.1,132.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="475.9" cy="137.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q7: 24.1 2.15 s, 26.10 2.13 s, 1.0x faster</title>
+<rect x="68" y="145.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="156.5" font-size="11" text-anchor="end" fill="#52514e">Q7</text>
+<line x1="317.1" y1="152.5" x2="316.6" y2="152.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M317.1,147.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="316.6" cy="152.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q8: 24.1 3.82 s, 26.10 0.95 s, 4.0x faster</title>
+<rect x="68" y="160.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="171.5" font-size="11" text-anchor="end" fill="#52514e">Q8</text>
+<line x1="363.8" y1="167.5" x2="250.6" y2="167.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M363.8,162.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="250.6" cy="167.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q9: 24.1 2.49 s, 26.10 5.33 s, 2.1x slower</title>
+<rect x="68" y="175.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="186.5" font-size="11" text-anchor="end" fill="#52514e">Q9</text>
+<line x1="329.1" y1="182.5" x2="390.9" y2="182.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M329.1,177.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="390.9" cy="182.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<text x="400.9" y="186.5" font-size="11" fill="#52514e" stroke="#fcfcfb" stroke-width="3" paint-order="stroke">2.1x slower</text>
+</g>
+<g><title>Q11: 24.1 123.44 s, 26.10 8.61 s, 14.3x faster</title>
+<rect x="68" y="190.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="201.5" font-size="11" text-anchor="end" fill="#52514e">Q11</text>
+<line x1="646.1" y1="197.5" x2="429.8" y2="197.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M646.1,192.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="429.8" cy="197.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q13: 24.1 timeout (&gt;600 s), 26.10 2.66 s, 225.8x faster</title>
+<rect x="68" y="205.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="216.5" font-size="11" text-anchor="end" fill="#52514e">Q13</text>
+<line x1="774.5" y1="212.5" x2="334.4" y2="212.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M774.5,207.5 l5,5 l-5,5 l-5,-5 z" fill="#fcfcfb" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="334.4" cy="212.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q15: 24.1 4.45 s, 26.10 0.46 s, 9.7x faster</title>
+<rect x="68" y="220.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="231.5" font-size="11" text-anchor="end" fill="#52514e">Q15</text>
+<line x1="376.3" y1="227.5" x2="192.1" y2="227.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M376.3,222.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="192.1" cy="227.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q17: 24.1 45.17 s, 26.10 2.15 s, 21.1x faster</title>
+<rect x="68" y="235.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="246.5" font-size="11" text-anchor="end" fill="#52514e">Q17</text>
+<line x1="564.5" y1="242.5" x2="317.0" y2="242.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M564.5,237.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="317.0" cy="242.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q19: 24.1 9.16 s, 26.10 0.60 s, 15.3x faster</title>
+<rect x="68" y="250.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="261.5" font-size="11" text-anchor="end" fill="#52514e">Q19</text>
+<line x1="434.9" y1="257.5" x2="213.5" y2="257.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M434.9,252.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="213.5" cy="257.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q22: 24.1 2.00 s, 26.10 0.94 s, 2.1x faster</title>
+<rect x="68" y="265.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="276.5" font-size="11" text-anchor="end" fill="#52514e">Q22</text>
+<line x1="311.4" y1="272.5" x2="250.4" y2="272.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M311.4,267.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="250.4" cy="272.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q23: 24.1 116.80 s, 26.10 221.81 s, 1.9x slower</title>
+<rect x="68" y="280.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="291.5" font-size="11" text-anchor="end" fill="#52514e">Q23</text>
+<line x1="641.6" y1="287.5" x2="693.7" y2="287.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M641.6,282.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="693.7" cy="287.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<text x="703.7" y="291.5" font-size="11" fill="#52514e" stroke="#fcfcfb" stroke-width="3" paint-order="stroke">1.9x slower</text>
+</g>
+<g><title>Q24: 24.1 30.25 s, 26.10 3.37 s, 9.0x faster</title>
+<rect x="68" y="295.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="306.5" font-size="11" text-anchor="end" fill="#52514e">Q24</text>
+<line x1="531.9" y1="302.5" x2="353.7" y2="302.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M531.9,297.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="353.7" cy="302.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q25: 24.1 44.13 s, 26.10 1.79 s, 24.6x faster</title>
+<rect x="68" y="310.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="321.5" font-size="11" text-anchor="end" fill="#52514e">Q25</text>
+<line x1="562.6" y1="317.5" x2="302.4" y2="317.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M562.6,312.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="302.4" cy="317.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q26: 24.1 1.41 s, 26.10 0.95 s, 1.5x faster</title>
+<rect x="68" y="325.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="336.5" font-size="11" text-anchor="end" fill="#52514e">Q26</text>
+<line x1="282.9" y1="332.5" x2="250.6" y2="332.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M282.9,327.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="250.6" cy="332.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q27: 24.1 2.15 s, 26.10 1.71 s, 1.3x faster</title>
+<rect x="68" y="340.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="351.5" font-size="11" text-anchor="end" fill="#52514e">Q27</text>
+<line x1="317.0" y1="347.5" x2="298.4" y2="347.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M317.0,342.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="298.4" cy="347.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q28: 24.1 2.58 s, 26.10 3.99 s, 1.5x slower</title>
+<rect x="68" y="355.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="366.5" font-size="11" text-anchor="end" fill="#52514e">Q28</text>
+<line x1="331.9" y1="362.5" x2="367.4" y2="362.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M331.9,357.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="367.4" cy="362.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<text x="377.4" y="366.5" font-size="11" fill="#52514e" stroke="#fcfcfb" stroke-width="3" paint-order="stroke">1.5x slower</text>
+</g>
+<g><title>Q29: 24.1 43.87 s, 26.10 2.21 s, 19.9x faster</title>
+<rect x="68" y="370.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="381.5" font-size="11" text-anchor="end" fill="#52514e">Q29</text>
+<line x1="562.1" y1="377.5" x2="319.2" y2="377.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M562.1,372.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="319.2" cy="377.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q31: 24.1 5.54 s, 26.10 3.03 s, 1.8x faster</title>
+<rect x="68" y="385.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="396.5" font-size="11" text-anchor="end" fill="#52514e">Q31</text>
+<line x1="394.1" y1="392.5" x2="345.1" y2="392.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M394.1,387.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="345.1" cy="392.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q33: 24.1 1.64 s, 26.10 1.17 s, 1.4x faster</title>
+<rect x="68" y="400.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="411.5" font-size="11" text-anchor="end" fill="#52514e">Q33</text>
+<line x1="295.1" y1="407.5" x2="267.6" y2="407.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M295.1,402.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="267.6" cy="407.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q34: 24.1 2.06 s, 26.10 1.54 s, 1.3x faster</title>
+<rect x="68" y="415.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="426.5" font-size="11" text-anchor="end" fill="#52514e">Q34</text>
+<line x1="313.9" y1="422.5" x2="290.0" y2="422.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M313.9,417.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="290.0" cy="422.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q38: 24.1 12.23 s, 26.10 19.92 s, 1.6x slower</title>
+<rect x="68" y="430.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="441.5" font-size="11" text-anchor="end" fill="#52514e">Q38</text>
+<line x1="458.4" y1="437.5" x2="498.0" y2="437.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M458.4,432.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="498.0" cy="437.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<text x="508.0" y="441.5" font-size="11" fill="#52514e" stroke="#fcfcfb" stroke-width="3" paint-order="stroke">1.6x slower</text>
+</g>
+<g><title>Q39: 24.1 10.29 s, 26.10 0.64 s, 16.0x faster</title>
+<rect x="68" y="445.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="456.5" font-size="11" text-anchor="end" fill="#52514e">Q39</text>
+<line x1="444.3" y1="452.5" x2="219.3" y2="452.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M444.3,447.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="219.3" cy="452.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q42: 24.1 7.25 s, 26.10 0.34 s, 21.5x faster</title>
+<rect x="68" y="460.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="471.5" font-size="11" text-anchor="end" fill="#52514e">Q42</text>
+<line x1="415.8" y1="467.5" x2="166.6" y2="467.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M415.8,462.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="166.6" cy="467.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q43: 24.1 28.65 s, 26.10 0.97 s, 29.5x faster</title>
+<rect x="68" y="475.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="486.5" font-size="11" text-anchor="end" fill="#52514e">Q43</text>
+<line x1="527.5" y1="482.5" x2="252.6" y2="482.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M527.5,477.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="252.6" cy="482.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q44: 24.1 0.90 s, 26.10 1.19 s, 1.3x slower</title>
+<rect x="68" y="490.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="501.5" font-size="11" text-anchor="end" fill="#52514e">Q44</text>
+<line x1="246.8" y1="497.5" x2="269.2" y2="497.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M246.8,492.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="269.2" cy="497.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<text x="279.2" y="501.5" font-size="11" fill="#52514e" stroke="#fcfcfb" stroke-width="3" paint-order="stroke">1.3x slower</text>
+</g>
+<g><title>Q45: 24.1 2.77 s, 26.10 0.36 s, 7.7x faster</title>
+<rect x="68" y="505.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="516.5" font-size="11" text-anchor="end" fill="#52514e">Q45</text>
+<line x1="337.8" y1="512.5" x2="172.1" y2="512.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M337.8,507.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="172.1" cy="512.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q46: 24.1 3.43 s, 26.10 2.18 s, 1.6x faster</title>
+<rect x="68" y="520.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="531.5" font-size="11" text-anchor="end" fill="#52514e">Q46</text>
+<line x1="355.1" y1="527.5" x2="318.1" y2="527.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M355.1,522.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="318.1" cy="527.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q48: 24.1 timeout (&gt;600 s), 26.10 1.97 s, 304.8x faster</title>
+<rect x="68" y="535.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="546.5" font-size="11" text-anchor="end" fill="#52514e">Q48</text>
+<line x1="774.5" y1="542.5" x2="310.0" y2="542.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M774.5,537.5 l5,5 l-5,5 l-5,-5 z" fill="#fcfcfb" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="310.0" cy="542.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q50: 24.1 10.05 s, 26.10 1.51 s, 6.7x faster</title>
+<rect x="68" y="550.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="561.5" font-size="11" text-anchor="end" fill="#52514e">Q50</text>
+<line x1="442.4" y1="557.5" x2="288.5" y2="557.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M442.4,552.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="288.5" cy="557.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q51: 24.1 12.75 s, 26.10 4.55 s, 2.8x faster</title>
+<rect x="68" y="565.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="576.5" font-size="11" text-anchor="end" fill="#52514e">Q51</text>
+<line x1="461.8" y1="572.5" x2="378.1" y2="572.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M461.8,567.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="378.1" cy="572.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q52: 24.1 7.16 s, 26.10 0.34 s, 21.1x faster</title>
+<rect x="68" y="580.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="591.5" font-size="11" text-anchor="end" fill="#52514e">Q52</text>
+<line x1="414.9" y1="587.5" x2="167.2" y2="587.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M414.9,582.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="167.2" cy="587.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q53: 24.1 5.64 s, 26.10 0.49 s, 11.4x faster</title>
+<rect x="68" y="595.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="606.5" font-size="11" text-anchor="end" fill="#52514e">Q53</text>
+<line x1="395.5" y1="602.5" x2="197.6" y2="602.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M395.5,597.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="197.6" cy="602.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q54: 24.1 29.13 s, 26.10 1.04 s, 28.1x faster</title>
+<rect x="68" y="610.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="621.5" font-size="11" text-anchor="end" fill="#52514e">Q54</text>
+<line x1="528.8" y1="617.5" x2="257.9" y2="617.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M528.8,612.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="257.9" cy="617.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q55: 24.1 7.12 s, 26.10 0.26 s, 27.6x faster</title>
+<rect x="68" y="625.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="636.5" font-size="11" text-anchor="end" fill="#52514e">Q55</text>
+<line x1="414.4" y1="632.5" x2="145.0" y2="632.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M414.4,627.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="145.0" cy="632.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q56: 24.1 1.66 s, 26.10 0.76 s, 2.2x faster</title>
+<rect x="68" y="640.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="651.5" font-size="11" text-anchor="end" fill="#52514e">Q56</text>
+<line x1="296.4" y1="647.5" x2="232.6" y2="647.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M296.4,642.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="232.6" cy="647.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q59: 24.1 8.70 s, 26.10 2.88 s, 3.0x faster</title>
+<rect x="68" y="655.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="666.5" font-size="11" text-anchor="end" fill="#52514e">Q59</text>
+<line x1="430.6" y1="662.5" x2="340.9" y2="662.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M430.6,657.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="340.9" cy="662.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q60: 24.1 1.79 s, 26.10 1.16 s, 1.5x faster</title>
+<rect x="68" y="670.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="681.5" font-size="11" text-anchor="end" fill="#52514e">Q60</text>
+<line x1="302.2" y1="677.5" x2="267.4" y2="677.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M302.2,672.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="267.4" cy="677.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q62: 24.1 1.80 s, 26.10 0.57 s, 3.1x faster</title>
+<rect x="68" y="685.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="696.5" font-size="11" text-anchor="end" fill="#52514e">Q62</text>
+<line x1="302.6" y1="692.5" x2="209.5" y2="692.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M302.6,687.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="209.5" cy="692.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q63: 24.1 5.47 s, 26.10 0.50 s, 10.9x faster</title>
+<rect x="68" y="700.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="711.5" font-size="11" text-anchor="end" fill="#52514e">Q63</text>
+<line x1="393.0" y1="707.5" x2="198.7" y2="707.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M393.0,702.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="198.7" cy="707.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q64: 24.1 timeout (&gt;600 s), 26.10 0.70 s, 858.1x faster</title>
+<rect x="68" y="715.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="726.5" font-size="11" text-anchor="end" fill="#52514e">Q64</text>
+<line x1="774.5" y1="722.5" x2="225.9" y2="722.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M774.5,717.5 l5,5 l-5,5 l-5,-5 z" fill="#fcfcfb" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="225.9" cy="722.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q65: 24.1 timeout (&gt;600 s), 26.10 2.59 s, 231.3x faster</title>
+<rect x="68" y="730.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="741.5" font-size="11" text-anchor="end" fill="#52514e">Q65</text>
+<line x1="774.5" y1="737.5" x2="332.4" y2="737.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M774.5,732.5 l5,5 l-5,5 l-5,-5 z" fill="#fcfcfb" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="332.4" cy="737.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q67: 24.1 89.45 s, 26.10 98.35 s, 1.1x slower</title>
+<rect x="68" y="745.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="756.5" font-size="11" text-anchor="end" fill="#52514e">Q67</text>
+<line x1="619.9" y1="752.5" x2="627.6" y2="752.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M619.9,747.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="627.6" cy="752.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q68: 24.1 2.97 s, 26.10 2.26 s, 1.3x faster</title>
+<rect x="68" y="760.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="771.5" font-size="11" text-anchor="end" fill="#52514e">Q68</text>
+<line x1="343.4" y1="767.5" x2="321.2" y2="767.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M343.4,762.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="321.2" cy="767.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q71: 24.1 1.66 s, 26.10 0.74 s, 2.2x faster</title>
+<rect x="68" y="775.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="786.5" font-size="11" text-anchor="end" fill="#52514e">Q71</text>
+<line x1="296.3" y1="782.5" x2="230.8" y2="782.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M296.3,777.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="230.8" cy="782.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q73: 24.1 1.68 s, 26.10 1.50 s, 1.1x faster</title>
+<rect x="68" y="790.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="801.5" font-size="11" text-anchor="end" fill="#52514e">Q73</text>
+<line x1="297.1" y1="797.5" x2="287.7" y2="797.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M297.1,792.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="287.7" cy="797.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q74: 24.1 103.34 s, 26.10 4.89 s, 21.1x faster</title>
+<rect x="68" y="805.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="816.5" font-size="11" text-anchor="end" fill="#52514e">Q74</text>
+<line x1="631.7" y1="812.5" x2="384.0" y2="812.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M631.7,807.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="384.0" cy="812.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q76: 24.1 1.12 s, 26.10 0.84 s, 1.3x faster</title>
+<rect x="68" y="820.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="831.5" font-size="11" text-anchor="end" fill="#52514e">Q76</text>
+<line x1="264.0" y1="827.5" x2="241.3" y2="827.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M264.0,822.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="241.3" cy="827.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q83: 24.1 0.77 s, 26.10 0.26 s, 2.9x faster</title>
+<rect x="68" y="835.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="846.5" font-size="11" text-anchor="end" fill="#52514e">Q83</text>
+<line x1="233.4" y1="842.5" x2="146.6" y2="842.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M233.4,837.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="146.6" cy="842.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q84: 24.1 2.95 s, 26.10 0.20 s, 14.7x faster</title>
+<rect x="68" y="850.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="861.5" font-size="11" text-anchor="end" fill="#52514e">Q84</text>
+<line x1="342.9" y1="857.5" x2="124.8" y2="857.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M342.9,852.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="124.8" cy="857.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q85: 24.1 2.79 s, 26.10 0.65 s, 4.3x faster</title>
+<rect x="68" y="865.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="876.5" font-size="11" text-anchor="end" fill="#52514e">Q85</text>
+<line x1="338.3" y1="872.5" x2="220.2" y2="872.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M338.3,867.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="220.2" cy="872.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q87: 24.1 12.23 s, 26.10 19.90 s, 1.6x slower</title>
+<rect x="68" y="880.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="891.5" font-size="11" text-anchor="end" fill="#52514e">Q87</text>
+<line x1="458.3" y1="887.5" x2="497.9" y2="887.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M458.3,882.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="497.9" cy="887.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<text x="507.9" y="891.5" font-size="11" fill="#52514e" stroke="#fcfcfb" stroke-width="3" paint-order="stroke">1.6x slower</text>
+</g>
+<g><title>Q88: 24.1 13.36 s, 26.10 6.62 s, 2.0x faster</title>
+<rect x="68" y="895.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="906.5" font-size="11" text-anchor="end" fill="#52514e">Q88</text>
+<line x1="465.5" y1="902.5" x2="408.5" y2="902.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M465.5,897.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="408.5" cy="902.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q89: 24.1 6.66 s, 26.10 0.87 s, 7.7x faster</title>
+<rect x="68" y="910.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="921.5" font-size="11" text-anchor="end" fill="#52514e">Q89</text>
+<line x1="409.0" y1="917.5" x2="243.7" y2="917.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M409.0,912.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="243.7" cy="917.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q90: 24.1 0.70 s, 26.10 0.52 s, 1.4x faster</title>
+<rect x="68" y="925.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="936.5" font-size="11" text-anchor="end" fill="#52514e">Q90</text>
+<line x1="225.8" y1="932.5" x2="201.1" y2="932.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M225.8,927.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="201.1" cy="932.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q91: 24.1 2.71 s, 26.10 0.20 s, 13.4x faster</title>
+<rect x="68" y="940.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="951.5" font-size="11" text-anchor="end" fill="#52514e">Q91</text>
+<line x1="335.8" y1="947.5" x2="124.8" y2="947.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M335.8,942.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="124.8" cy="947.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q93: 24.1 7.01 s, 26.10 1.37 s, 5.1x faster</title>
+<rect x="68" y="955.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="966.5" font-size="11" text-anchor="end" fill="#52514e">Q93</text>
+<line x1="413.2" y1="962.5" x2="280.6" y2="962.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M413.2,957.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="280.6" cy="962.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q96: 24.1 1.16 s, 26.10 0.90 s, 1.3x faster</title>
+<rect x="68" y="970.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="981.5" font-size="11" text-anchor="end" fill="#52514e">Q96</text>
+<line x1="266.8" y1="977.5" x2="246.4" y2="977.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M266.8,972.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="246.4" cy="977.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q97: 24.1 13.14 s, 26.10 2.79 s, 4.7x faster</title>
+<rect x="68" y="985.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="996.5" font-size="11" text-anchor="end" fill="#52514e">Q97</text>
+<line x1="464.2" y1="992.5" x2="338.4" y2="992.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M464.2,987.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="338.4" cy="992.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+<g><title>Q99: 24.1 3.05 s, 26.10 0.82 s, 3.7x faster</title>
+<rect x="68" y="1000.0" width="748.0" height="15" fill="transparent"/>
+<text x="60" y="1011.5" font-size="11" text-anchor="end" fill="#52514e">Q99</text>
+<line x1="345.5" y1="1007.5" x2="238.9" y2="1007.5" stroke="#b9b8ae" stroke-width="1.5"/>
+<path d="M345.5,1002.5 l5,5 l-5,5 l-5,-5 z" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="238.9" cy="1007.5" r="4.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+</g>
+</svg>

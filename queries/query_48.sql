@@ -1,4 +1,4 @@
-USE tpcds; SET partial_merge_join = 1, partial_merge_join_optimizations = 1, max_bytes_before_external_group_by = 5000000000, max_bytes_before_external_sort = 5000000000;
+USE tpcds; SET max_bytes_before_external_group_by = 5000000000, max_bytes_before_external_sort = 5000000000;
 select sum (ss_quantity)
  from store_sales, store, customer_demographics, customer_address, date_dim
  where s_store_sk = ss_store_sk

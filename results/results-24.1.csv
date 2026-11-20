@@ -1,0 +1,158 @@
+query,run,status,seconds,rows,error
+1,1,FAIL,0.098,0,"Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 'SR_FEE' while processing query: 'SELECT sr_customer_sk AS ctr_customer_sk, sr_store_sk AS ctr_store_sk, sum(SR_F"
+2,1,OK,5.681,2513,
+2,2,OK,4.842,2513,
+3,1,OK,14.348,100,
+3,2,OK,13.818,100,
+4,1,OK,197.083,100,
+4,2,OK,201.735,100,
+5,1,FAIL,0.087,0,Code: 62. DB::Exception: Syntax error: failed at position 931
+6,1,FAIL,0.084,0,Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 'i.i_category' while processing query: 'SELECT avg
+7,1,OK,3.895,100,
+7,2,OK,2.148,100,
+8,1,OK,4.189,10,
+8,2,OK,3.817,10,
+9,1,OK,2.491,1,
+9,2,OK,2.668,1,
+10,1,FAIL,0.078,0,"Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 'c.c_customer_sk' while processing query: 'SELECT ws_sold_date_sk, ws_sold_time_sk, ws_ship_date_sk, ws_item_sk, "
+11,1,OK,123.437,100,
+11,2,OK,124.622,100,
+12,1,FAIL,0.068,0,Code: 62. DB::Exception: Syntax error: failed at position 514
+13,1,FAIL,600.094,0,"Code: 159. DB::Exception: Received from localhost:9000. DB::Exception: Timeout exceeded: elapsed 600.005996885 seconds, maximum: 600. (TIMEOUT_EXCEEDED)"
+14,1,FAIL,2.300,0,Code: 206. DB::Exception: Received from localhost:9000. DB::Exception: No alias for subquery or table function in JOIN
+15,1,OK,4.865,100,
+15,2,OK,4.453,100,
+16,1,FAIL,0.072,0,Code: 62. DB::Exception: Syntax error: failed at position 314
+17,1,OK,45.174,43,
+17,2,OK,46.297,43,
+18,1,FAIL,146.611,0,Code: 349. DB::Exception: Received from localhost:9000. DB::Exception: Cannot convert NULL value to non-Nullable type: while executing 'FUNCTION CAST
+19,1,OK,9.309,100,
+19,2,OK,9.163,100,
+20,1,FAIL,0.070,0,Code: 62. DB::Exception: Syntax error: failed at position 524
+21,1,FAIL,0.068,0,Code: 62. DB::Exception: Syntax error: failed at position 707
+22,1,OK,2.204,100,
+22,2,OK,2.002,100,
+23,1,OK,134.160,26,
+23,2,OK,116.800,26,
+24,1,OK,30.796,14,
+24,2,OK,30.251,14,
+25,1,OK,44.127,13,
+25,2,OK,45.886,13,
+26,1,OK,1.410,100,
+26,2,OK,1.474,100,
+27,1,OK,2.451,100,
+27,2,OK,2.146,100,
+28,1,OK,2.763,1,
+28,2,OK,2.579,1,
+29,1,OK,44.437,27,
+29,2,OK,43.867,27,
+30,1,FAIL,0.078,0,Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 'ctr1.ctr_state' while processing query: 'SELECT avg
+31,1,OK,6.929,275,
+31,2,OK,5.544,275,
+32,1,FAIL,0.068,0,Code: 62. DB::Exception: Syntax error: failed at position 243
+33,1,OK,1.877,100,
+33,2,OK,1.638,100,
+34,1,OK,2.228,5708,
+34,2,OK,2.064,5708,
+35,1,FAIL,0.081,0,"Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 'c.c_customer_sk' while processing query: 'SELECT ws_sold_date_sk, ws_sold_time_sk, ws_ship_date_sk, ws_item_sk, "
+36,1,FAIL,0.082,0,Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Unknown column: if
+37,1,FAIL,0.070,0,Code: 62. DB::Exception: Syntax error: failed at position 297
+38,1,OK,12.241,1,
+38,2,OK,12.233,1,
+39,1,OK,10.539,5344,
+39,2,OK,10.291,5344,
+40,1,FAIL,0.071,0,Code: 62. DB::Exception: Syntax error: failed at position 731
+41,1,FAIL,0.073,0,Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 'i1.i_manufact' while processing query: 'SELECT count
+42,1,OK,7.247,11,
+42,2,OK,7.259,11,
+43,1,OK,28.967,100,
+43,2,OK,28.648,100,
+44,1,OK,0.946,10,
+44,2,OK,0.904,10,
+45,1,OK,3.038,100,
+45,2,OK,2.771,100,
+46,1,OK,3.562,100,
+46,2,OK,3.432,100,
+47,1,FAIL,0.096,0,"Code: 53. DB::Exception: Received from localhost:9000. DB::Exception: Can't infer common type for joined columns: _--v1.rn: UInt64 at left, minus"
+48,1,FAIL,600.207,0,"Code: 159. DB::Exception: Received from localhost:9000. DB::Exception: Timeout exceeded: elapsed 600.121213124 seconds, maximum: 600. (TIMEOUT_EXCEEDED)"
+49,1,FAIL,0.074,0,"Code: 558. DB::Exception: Received from localhost:9000. DB::Exception: Expected ALL or DISTINCT in SelectWithUnion query, because setting"
+50,1,OK,10.683,100,
+50,2,OK,10.049,100,
+51,1,OK,13.291,100,
+51,2,OK,12.754,100,
+52,1,OK,7.381,100,
+52,2,OK,7.163,100,
+53,1,OK,5.643,100,
+53,2,OK,6.903,100,
+54,1,OK,29.336,10,
+54,2,OK,29.130,10,
+55,1,OK,7.701,100,
+55,2,OK,7.122,100,
+56,1,OK,1.702,100,
+56,2,OK,1.664,100,
+57,1,FAIL,0.090,0,"Code: 53. DB::Exception: Received from localhost:9000. DB::Exception: Can't infer common type for joined columns: _--v1.rn: UInt64 at left, minus"
+58,1,FAIL,0.080,0,Code: 352. DB::Exception: Received from localhost:9000. DB::Exception: Ambiguous column 'item_id': While processing WITH ss_items AS
+59,1,OK,8.695,100,
+59,2,OK,8.924,100,
+60,1,OK,1.788,100,
+60,2,OK,1.819,100,
+61,1,FAIL,0.469,0,Code: 349. DB::Exception: Received from localhost:9000. DB::Exception: Cannot convert NULL value to non-Nullable type: while executing 'FUNCTION CAST
+62,1,OK,2.007,100,
+62,2,OK,1.796,100,
+63,1,OK,5.470,100,
+63,2,OK,5.473,100,
+64,1,FAIL,600.109,0,"Code: 159. DB::Exception: Received from localhost:9000. DB::Exception: Timeout exceeded: elapsed 600.007995012 seconds, maximum: 600. (TIMEOUT_EXCEEDED)"
+65,1,FAIL,600.108,0,"Code: 159. DB::Exception: Received from localhost:9000. DB::Exception: Timeout exceeded: elapsed 600.005806484 seconds, maximum: 600. (TIMEOUT_EXCEEDED)"
+66,1,FAIL,0.101,0,Code: 184. DB::Exception: Received from localhost:9000. DB::Exception: Aggregate function sum
+67,1,OK,89.454,100,
+67,2,OK,90.779,100,
+68,1,OK,3.295,100,
+68,2,OK,2.968,100,
+69,1,FAIL,0.088,0,"Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 'c.c_customer_sk' while processing query: 'SELECT cs_sold_date_sk, cs_sold_time_sk, cs_ship_date_sk, cs_bill_cust"
+70,1,FAIL,0.084,0,Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Unknown column: if
+71,1,OK,1.998,69886,
+71,2,OK,1.662,69886,
+72,1,FAIL,0.071,0,"Code: 352. DB::Exception: Received from localhost:9000. DB::Exception: Ambiguous column 'd_week_seq': While processing SELECT i_item_desc, w_warehouse_name, `_--d1.d_week_seq` AS `d1.d_week_seq`, sum"
+73,1,OK,1.714,52,
+73,2,OK,1.680,52,
+74,1,OK,103.345,100,
+74,2,OK,105.287,100,
+75,1,FAIL,0.072,0,"Code: 558. DB::Exception: Received from localhost:9000. DB::Exception: Expected ALL or DISTINCT in SelectWithUnion query, because setting"
+76,1,OK,1.117,100,
+76,2,OK,1.174,100,
+77,1,FAIL,0.072,0,Code: 62. DB::Exception: Syntax error: failed at position 306
+78,1,OK,0.174,0,
+78,2,OK,0.197,0,
+79,1,FAIL,0.086,0,"Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 's_city' while processing query: 'SELECT c_last_name, c_first_name, substring"
+80,1,FAIL,0.072,0,Code: 62. DB::Exception: Syntax error: failed at position 537
+81,1,FAIL,0.082,0,Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Missing columns: 'ctr1.ctr_state' while processing query: 'SELECT avg
+82,1,FAIL,0.070,0,Code: 62. DB::Exception: Syntax error: failed at position 293
+83,1,OK,0.766,100,
+83,2,OK,0.885,100,
+84,1,OK,3.005,100,
+84,2,OK,2.950,100,
+85,1,OK,2.854,50,
+85,2,OK,2.789,50,
+86,1,FAIL,0.082,0,Code: 47. DB::Exception: Received from localhost:9000. DB::Exception: Unknown column: if
+87,1,OK,12.313,1,
+87,2,OK,12.228,1,
+88,1,OK,13.398,1,
+88,2,OK,13.355,1,
+89,1,OK,6.663,100,
+89,2,OK,7.066,100,
+90,1,OK,0.894,1,
+90,2,OK,0.698,1,
+91,1,OK,2.866,30,
+91,2,OK,2.705,30,
+92,1,FAIL,0.068,0,Code: 62. DB::Exception: Syntax error: failed at position 244
+93,1,OK,7.605,100,
+93,2,OK,7.013,100,
+94,1,FAIL,0.069,0,Code: 62. DB::Exception: Syntax error: failed at position 307
+95,1,FAIL,0.070,0,Code: 62. DB::Exception: Syntax error: failed at position 532
+96,1,OK,1.156,1,
+96,2,OK,1.315,1,
+97,1,OK,13.140,1,
+97,2,OK,13.306,1,
+98,1,FAIL,0.069,0,Code: 62. DB::Exception: Syntax error: failed at position 515
+99,1,OK,3.337,100,
+99,2,OK,3.049,100,
